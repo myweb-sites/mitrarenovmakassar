@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitra Renov Makassar - Jasa Konstruksi & Renovasi Terpercaya</title>
+    <meta name="description" content="Jasa konstruksi, bangun rumah, renovasi, interior, dan eksterior terbaik di Makassar. Profesional, transparan, dan bergaransi. Hubungi Mitra Renov Makassar.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Config & Custom Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#0a192f',
+                            900: '#020c1b',
+                        },
+                        brand: {
+                            red: '#D32F2F',
+                            blue: '#1A237E',
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Open Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1A237E;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D32F2F;
+        }
+
+        /* Hero Gradient */
+        .hero-overlay {
+            background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(211, 47, 47, 0.3));
+        }
+
+        /* Hover Effects */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Animation Classes */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-img-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+        }
+
+        /* Active Menu State */
+        .nav-link.active {
+            color: #D32F2F;
+            font-weight: 700;
+        }
+        
+        .footer-btn.active {
+            background-color: #D32F2F;
+            border-color: #D32F2F;
+            color: white;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .lightbox.show {
+            opacity: 1;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        .lightbox.show img {
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body class="font-body text-gray-700 bg-white">
+
+    <!-- Top Bar -->
+    <div class="bg-navy-900 text-white py-2 text-sm hidden md:block">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <span><i class="fas fa-map-marker-alt text-brand-red mr-2"></i>Karampuang, Panakkukang, Makassar</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span>Ikuti Kami:</span>
+                <a href="https://www.facebook.com/trifateknindo" target="_blank" class="hover:text-brand-red transition"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/mitra_renov_makassar/" target="_blank" class="hover:text-brand-red transition"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#home" class="flex items-center gap-2">
+                <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkcd8SUTWLxBMnl-jKZxYZ9L7qhtm-6EJdSTqQgv7QCCUbgr6C_uHqZgo4EUNqPByQMegALfHTTfDpIl0GNtc4fUNzMjHmPAuCbGp_ivX2lch4vTMPLfwhtmEnBrzBBzP4gzkslIr9qNqZHQpEbETdU4CdoIsFPmC4pY__2Xfw4MXfAypZTUBVCaRbQ=w1280" alt="Logo Mitra Renov Makassar" class="h-12 md:h-16 object-contain">
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden lg:flex items-center gap-8 font-heading font-semibold text-navy-800">
+                <a href="#home" class="nav-link hover:text-brand-red transition">Beranda</a>
+                <a href="#about" class="nav-link hover:text-brand-red transition">Tentang Kami</a>
+                <a href="#services" class="nav-link hover:text-brand-red transition">Layanan</a>
+                <a href="#gallery" class="nav-link hover:text-brand-red transition">Galeri</a>
+                <a href="#blog" class="nav-link hover:text-brand-red transition">Artikel</a>
+                <a href="#contact" class="bg-gradient-to-r from-brand-blue to-brand-red text-white px-6 py-2 rounded-full hover:shadow-lg transition transform hover:scale-105">Hubungi Kami</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-navy-800 text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="flex flex-col p-4 font-heading font-medium">
+                <a href="#home" class="py-3 border-b border-gray-100 hover:text-brand-red mobile-link">Beranda</a>
+                <a href="#about" class="py-3 border-b border-gray-100 hover:text-brand-red mobile-link">Tentang Kami</a>
+                <a href="#services" class="py-3 border-b border-gray-100 hover:text-brand-red mobile-link">Layanan</a>
+                <a href="#gallery" class="py-3 border-b border-gray-100 hover:text-brand-red mobile-link">Galeri</a>
+                <a href="#blog" class="py-3 border-b border-gray-100 hover:text-brand-red mobile-link">Artikel</a>
+                <a href="#contact" class="py-3 text-brand-red mobile-link">Hubungi Kami</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-[600px] md:h-[800px] flex items-center scroll-mt-32">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Rumah Mewah Makassar" class="w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10 text-white text-center md:text-left">
+            <div class="md:w-2/3 fade-in-up">
+                <span class="bg-brand-red px-3 py-1 text-sm font-bold uppercase tracking-wider rounded mb-4 inline-block">Jasa Konstruksi No.1 di Makassar</span>
+                <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight">
+                    Wujudkan Hunian Impian<br>Berkualitas & Tahan Lama
+                </h1>
+                <p class="text-lg md:text-xl mb-8 font-light text-gray-200">
+                    Mitra Renov Makassar hadir sebagai solusi konstruksi profesional. Kami membangun dengan hati, merenovasi dengan presisi, dan menghadirkan kemewahan klasik hingga modern di setiap sudut rumah Anda.
+                </p>
+                <div class="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
+                    <a href="https://wa.me/6281717312432?text=Halo%20Mitra%20Renov,%20saya%20ingin%20konsultasi%20bangun/renovasi." target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full font-bold transition flex items-center justify-center gap-2">
+                        <i class="fab fa-whatsapp text-xl"></i> Konsultasi Gratis
+                    </a>
+                    <a href="#gallery" class="bg-transparent border-2 border-white hover:bg-white hover:text-brand-blue text-white px-8 py-3 rounded-full font-bold transition flex items-center justify-center">
+                        Lihat Portfolio <i class="fas fa-arrow-down ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics (Animated) -->
+    <section class="py-12 bg-white relative -mt-10 z-20 shadow-lg container mx-auto rounded-lg">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center" id="counter-section">
+            <div>
+                <i class="fas fa-building text-4xl text-brand-red mb-2"></i>
+                <div class="text-3xl font-bold font-heading text-navy-900 counter" data-target="500">0</div>
+                <div class="text-gray-600 text-sm font-semibold">Proyek Selesai</div>
+            </div>
+            <div>
+                <i class="fas fa-calendar-check text-4xl text-brand-red mb-2"></i>
+                <div class="text-3xl font-bold font-heading text-navy-900 counter" data-target="10">0</div>
+                <div class="text-gray-600 text-sm font-semibold">Tahun Pengalaman</div>
+            </div>
+            <div>
+                <i class="fas fa-smile text-4xl text-brand-red mb-2"></i>
+                <div class="text-3xl font-bold font-heading text-navy-900 counter" data-target="350">0</div>
+                <div class="text-gray-600 text-sm font-semibold">Klien Puas</div>
+            </div>
+            <div>
+                <i class="fas fa-hard-hat text-4xl text-brand-red mb-2"></i>
+                <div class="text-3xl font-bold font-heading text-navy-900 counter" data-target="50">0</div>
+                <div class="text-gray-600 text-sm font-semibold">Tenaga Ahli</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Profile & Visi Misi -->
+    <section id="about" class="py-20 bg-gray-50 scroll-mt-32">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <!-- Image Grid -->
+                <div class="lg:w-1/2 grid grid-cols-2 gap-4">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Konstruksi Makassar" class="rounded-lg shadow-lg w-full h-64 object-cover transform translate-y-8">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Arsitek Makassar" class="rounded-lg shadow-lg w-full h-64 object-cover">
+                </div>
+                
+                <!-- Content -->
+                <div class="lg:w-1/2">
+                    <h4 class="text-brand-red font-bold uppercase tracking-wider mb-2">Tentang Kami</h4>
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-navy-900 mb-6">Mitra Terpercaya Membangun Makassar</h2>
+                    <p class="mb-6 leading-relaxed">
+                        <strong>Mitra Renov Makassar</strong> adalah perusahaan kontraktor yang berdedikasi penuh dalam bidang jasa konstruksi, bangun baru, dan renovasi di Sulawesi Selatan. Dengan pengalaman lebih dari satu dekade, kami menggabungkan keahlian teknis dengan estetika desain untuk menciptakan hunian yang tidak hanya indah dipandang, tetapi juga kokoh dan fungsional.
+                    </p>
+                    <p class="mb-6 leading-relaxed">
+                        Spesialisasi kami mencakup pembangunan rumah tinggal konsep modern, klasik, renovasi total, hingga pengerjaan interior dan eksterior detail. Kami percaya bahwa rumah adalah aset berharga, itulah mengapa kami berkomitmen pada kualitas tanpa kompromi.
+                    </p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-brand-blue mb-6">
+                        <h3 class="font-bold text-xl text-navy-900 mb-3">Visi & Misi</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-brand-red mt-1"></i> <span>Menjadi kontraktor pilihan utama di Makassar dengan standar kualitas internasional.</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-brand-red mt-1"></i> <span>Memberikan solusi konstruksi yang inovatif, transparan, dan tepat waktu.</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-brand-red mt-1"></i> <span>Membangun kepercayaan jangka panjang melalui hasil kerja yang presisi.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-navy-900 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-12">Kenapa Memilih <span class="text-brand-red">Mitra Renov?</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Item 1 -->
+                <div class="bg-navy-800 p-8 rounded-xl border border-navy-800 hover:border-brand-red transition duration-300">
+                    <div class="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-users-cog text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Tim Profesional</h3>
+                    <p class="text-gray-300 text-sm">Didukung oleh arsitek, sipil, dan tukang berpengalaman yang ahli di bidangnya masing-masing.</p>
+                </div>
+                <!-- Item 2 -->
+                <div class="bg-navy-800 p-8 rounded-xl border border-navy-800 hover:border-brand-red transition duration-300">
+                    <div class="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-drafting-compass text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Desain Custom</h3>
+                    <p class="text-gray-300 text-sm">Wujudkan desain rumah impian Anda, mulai dari minimalis modern hingga klasik mewah.</p>
+                </div>
+                <!-- Item 3 -->
+                <div class="bg-navy-800 p-8 rounded-xl border border-navy-800 hover:border-brand-red transition duration-300">
+                    <div class="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-file-invoice-dollar text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Biaya Transparan</h3>
+                    <p class="text-gray-300 text-sm">RAB yang detail dan transparan sejak awal. Tidak ada biaya tersembunyi di tengah proyek.</p>
+                </div>
+                <!-- Item 4 -->
+                <div class="bg-navy-800 p-8 rounded-xl border border-navy-800 hover:border-brand-red transition duration-300">
+                    <div class="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-shield-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Material Berkualitas</h3>
+                    <p class="text-gray-300 text-sm">Kami hanya menggunakan material SNI dan berkualitas tinggi demi kekokohan bangunan.</p>
+                </div>
+                <!-- Item 5 -->
+                <div class="bg-navy-800 p-8 rounded-xl border border-navy-800 hover:border-brand-red transition duration-300">
+                    <div class="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-clock text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Tepat Waktu</h3>
+                    <p class="text-gray-300 text-sm">Komitmen kami adalah menyelesaikan proyek sesuai timeline yang telah disepakati.</p>
+                </div>
+                <!-- Item 6 -->
+                <div class="bg-navy-800 p-8 rounded-xl border border-navy-800 hover:border-brand-red transition duration-300">
+                    <div class="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-award text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Garansi Pekerjaan</h3>
+                    <p class="text-gray-300 text-sm">Layanan purna jual berupa garansi pemeliharaan untuk ketenangan pikiran Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white scroll-mt-32">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-brand-red font-bold uppercase tracking-wider">Layanan Kami</span>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-navy-900 mt-2">Solusi Lengkap Kebutuhan Hunian</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="group rounded-xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bangun Rumah Baru" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 service-img-overlay"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <i class="fas fa-home text-2xl mb-2"></i>
+                            <h3 class="text-xl font-bold">Konstruksi Rumah Baru</h3>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white border-b-4 border-brand-red">
+                        <p class="text-gray-600 mb-4 text-sm">Jasa bangun rumah dari nol di lahan kosong. Kami menangani mulai dari pondasi, struktur, hingga finishing dengan standar teknis yang ketat.</p>
+                        <ul class="text-sm text-gray-500 space-y-1 mb-4">
+                            <li><i class="fas fa-check text-brand-red mr-2"></i>Rumah Minimalis</li>
+                            <li><i class="fas fa-check text-brand-red mr-2"></i>Rumah Mewah 2 Lantai</li>
+                        </ul>
+                        <a href="https://wa.me/6281717312432?text=Halo%20Mitra%20Renov,%20saya%20ingin%20konsultasi%20Konstruksi%20Rumah%20Baru." target="_blank" class="text-brand-blue font-bold hover:text-brand-red text-sm">Konsultasi <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="group rounded-xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Renovasi Rumah" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 service-img-overlay"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <i class="fas fa-tools text-2xl mb-2"></i>
+                            <h3 class="text-xl font-bold">Jasa Renovasi</h3>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white border-b-4 border-brand-blue">
+                        <p class="text-gray-600 mb-4 text-sm">Layanan renovasi total atau sebagian. Menambah lantai, perbaikan atap bocor, ganti keramik, hingga peremajaan tampilan rumah lama menjadi baru.</p>
+                        <ul class="text-sm text-gray-500 space-y-1 mb-4">
+                            <li><i class="fas fa-check text-brand-red mr-2"></i>Renovasi Total</li>
+                            <li><i class="fas fa-check text-brand-red mr-2"></i>Dak Lantai 2</li>
+                        </ul>
+                        <a href="https://wa.me/6281717312432?text=Halo%20Mitra%20Renov,%20saya%20ingin%20konsultasi%20Jasa%20Renovasi." target="_blank" class="text-brand-blue font-bold hover:text-brand-red text-sm">Konsultasi <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="group rounded-xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlZ1ZakiMoD7cWwNSwIc7HMxHWYshHpHHJOA&s" alt="Rumah Klasik" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 service-img-overlay"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <i class="fas fa-columns text-2xl mb-2"></i>
+                            <h3 class="text-xl font-bold">Spesialis Rumah Classic</h3>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white border-b-4 border-brand-red">
+                        <p class="text-gray-600 mb-4 text-sm">Keahlian khusus dalam detail profil klasik, pilar, dan ornamen mewah. Menciptakan hunian bergaya Eropa atau Mediterania yang elegan dan timeless.</p>
+                        <ul class="text-sm text-gray-500 space-y-1 mb-4">
+                            <li><i class="fas fa-check text-brand-red mr-2"></i>Profil Beton & Gypsum</li>
+                            <li><i class="fas fa-check text-brand-red mr-2"></i>Desain American Classic</li>
+                        </ul>
+                        <a href="https://wa.me/6281717312432?text=Halo%20Mitra%20Renov,%20saya%20ingin%20konsultasi%20Rumah%20Classic." target="_blank" class="text-brand-blue font-bold hover:text-brand-red text-sm">Konsultasi <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="group rounded-xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://jejakpiknik.com/wp-content/uploads/2022/07/jasa-interior-surabaya-minimalis.jpg" alt="Interior Design" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 service-img-overlay"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <i class="fas fa-couch text-2xl mb-2"></i>
+                            <h3 class="text-xl font-bold">Desain Interior</h3>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white border-b-4 border-brand-blue">
+                        <p class="text-gray-600 mb-4 text-sm">Pembuatan furniture custom dan penataan ruang. Kami memaksimalkan fungsi setiap sudut ruangan Anda agar nyaman dan estetik.</p>
+                        <ul class="text-sm text-gray-500 space-y-1 mb-4">
+                            <li><i class="fas fa-check text-brand-red mr-2"></i>Kitchen Set & Wardrobe</li>
+                            <li><i class="fas fa-check text-brand-red mr-2"></i>Partisi & Backdrop TV</li>
+                        </ul>
+                        <a href="https://wa.me/6281717312432?text=Halo%20Mitra%20Renov,%20saya%20ingin%20konsultasi%20Desain%20Interior." target="_blank" class="text-brand-blue font-bold hover:text-brand-red text-sm">Konsultasi <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="group rounded-xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://kanopisliding.com/wp-content/uploads/2024/08/kanopi-kolam-renang-sliding.jpg" alt="Eksterior" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 service-img-overlay"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <i class="fas fa-tree text-2xl mb-2"></i>
+                            <h3 class="text-xl font-bold">Eksterior & Landscape</h3>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white border-b-4 border-brand-red">
+                        <p class="text-gray-600 mb-4 text-sm">Mempercantik tampilan luar rumah Anda. Pengerjaan fasad modern, pembuatan taman, hingga struktur pelengkap keamanan rumah.</p>
+                        <ul class="text-sm text-gray-500 space-y-1 mb-4">
+                            <li><i class="fas fa-check text-brand-red mr-2"></i>Pagar & Kanopi</li>
+                            <li><i class="fas fa-check text-brand-red mr-2"></i>Taman & Kolam</li>
+                        </ul>
+                        <a href="https://wa.me/6281717312432?text=Halo%20Mitra%20Renov,%20saya%20ingin%20konsultasi%20Eksterior%20Landscape." target="_blank" class="text-brand-blue font-bold hover:text-brand-red text-sm">Konsultasi <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-heading font-bold text-navy-900 mb-10">Siapa Saja Klien Kami?</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded shadow hover:shadow-md transition">
+                    <i class="fas fa-user-tie text-4xl text-brand-blue mb-4"></i>
+                    <h4 class="font-bold mb-2">Pemilik Pribadi</h4>
+                    <p class="text-xs text-gray-500">Membangun rumah impian keluarga.</p>
+                </div>
+                <div class="bg-white p-6 rounded shadow hover:shadow-md transition">
+                    <i class="fas fa-city text-4xl text-brand-blue mb-4"></i>
+                    <h4 class="font-bold mb-2">Developer</h4>
+                    <p class="text-xs text-gray-500">Mitra pembangunan cluster perumahan.</p>
+                </div>
+                <div class="bg-white p-6 rounded shadow hover:shadow-md transition">
+                    <i class="fas fa-store text-4xl text-brand-blue mb-4"></i>
+                    <h4 class="font-bold mb-2">Pemilik Bisnis</h4>
+                    <p class="text-xs text-gray-500">Renovasi ruko, cafe, dan kantor.</p>
+                </div>
+                <div class="bg-white p-6 rounded shadow hover:shadow-md transition">
+                    <i class="fas fa-chart-line text-4xl text-brand-blue mb-4"></i>
+                    <h4 class="font-bold mb-2">Investor</h4>
+                    <p class="text-xs text-gray-500">Meningkatkan nilai jual properti (flipping).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-navy-900 text-white relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold">Kata Mereka Tentang Kami</h2>
+                <p class="text-gray-300 mt-4">Kepuasan klien adalah prioritas utama Mitra Renov Makassar</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testi 1 -->
+                <div class="bg-navy-800 p-8 rounded-xl border border-gray-700 relative">
+                    <i class="fas fa-quote-left text-4xl text-brand-red opacity-30 absolute top-4 left-4"></i>
+                    <p class="text-gray-300 italic mb-6 relative z-10">"Hasil renovasi rumah saya di Panakkukang sangat memuaskan. Tim kerjanya rapi, bersih, dan sesuai jadwal. Desain kitchen set-nya juga sangat fungsional. Terima kasih Mitra Renov!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gray-500 rounded-full flex items-center justify-center text-xl font-bold">BP</div>
+                        <div>
+                            <h4 class="font-bold text-white">Bpk. H. Prasetyo</h4>
+                            <span class="text-xs text-gray-400">Panakkukang, Makassar</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testi 2 -->
+                <div class="bg-navy-800 p-8 rounded-xl border border-gray-700 relative">
+                    <i class="fas fa-quote-left text-4xl text-brand-red opacity-30 absolute top-4 left-4"></i>
+                    <p class="text-gray-300 italic mb-6 relative z-10">"Awalnya ragu mau bangun rumah dari nol karena takut budget bengkak. Tapi konsultasi dengan tim Mitra Renov sangat transparan. RAB jelas, pengerjaan struktur kokoh."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gray-500 rounded-full flex items-center justify-center text-xl font-bold">IB</div>
+                        <div>
+                            <h4 class="font-bold text-white">Ibu Rahmawati</h4>
+                            <span class="text-xs text-gray-400">Gowa, Sulsel</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testi 3 -->
+                <div class="bg-navy-800 p-8 rounded-xl border border-gray-700 relative">
+                    <i class="fas fa-quote-left text-4xl text-brand-red opacity-30 absolute top-4 left-4"></i>
+                    <p class="text-gray-300 italic mb-6 relative z-10">"Saya pakai jasa untuk renovasi fasad ruko. Desainnya modern banget, bikin usaha saya jadi lebih menarik. Pelayanan ramah dan profesional."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gray-500 rounded-full flex items-center justify-center text-xl font-bold">AD</div>
+                        <div>
+                            <h4 class="font-bold text-white">Andi Faisal</h4>
+                            <span class="text-xs text-gray-400">Maros, Sulsel</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white scroll-mt-32">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-heading font-bold text-navy-900">Galeri Proyek</h2>
+                <p class="text-gray-600">Portofolio pengerjaan konstruksi dan renovasi kami (Klik untuk memperbesar)</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Images - Added 'gallery-img' class for JS targeting -->
+                <div class="h-48 md:h-64 overflow-hidden rounded-lg"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer gallery-img" alt="Project 1"></div>
+                <div class="h-48 md:h-64 overflow-hidden rounded-lg"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTptZGzIE0l63ZfQC8Yirg1E9lxIWQqzRFSWg&s" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer gallery-img" alt="Project 2"></div>
+                <div class="h-48 md:h-64 overflow-hidden rounded-lg"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiz-b86Zevph-e320OvPA7katBN8OlVBzAsw&s" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer gallery-img" alt="Project 3"></div>
+                <div class="h-48 md:h-64 overflow-hidden rounded-lg"><img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800&q=80" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer gallery-img" alt="Project 4"></div>
+                
+                <div class="h-48 md:h-64 overflow-hidden rounded-lg"><img src="https://bandungkitchenset.com/wp-content/uploads/2023/09/kitchen13.jpg" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer gallery-img" alt="Project 5"></div>
+                <div class="h-48 md:h-64 overflow-hidden rounded-lg"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_WUIE0qmmLc5trVhhGkf_DYxIlE7-rAtFpZIRtlD9yw&s" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer gallery-img" alt="Project 6"></div>
+                <div class="h-48 md:h-64 overflow-hidden rounded-lg"><img src="https://events.rumah123.com/wp-content/uploads/sites/38/2025/04/kanopi-transparan-buka-tutup.jpg" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer gallery-img" alt="Project 7"></div>
+                <div class="h-48 md:h-64 overflow-hidden rounded-lg"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWULg9a5Qr-i3Mb37M-mjjRAsB6xrZd-nWwQ&s" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer gallery-img" alt="Project 8"></div>
+
+                <div class="h-48 md:h-64 overflow-hidden rounded-lg"><img src="https://sumberjayalaser.com/wp-content/uploads/2020/11/jasa-pembuatan-pagar-laser-cutting-1024x636.jpg" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer gallery-img" alt="Project 9"></div>
+                <div class="h-48 md:h-64 overflow-hidden rounded-lg"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhmCls14RbiJGC4ccwq3Fjf3zxxOU_vjB4bpmeA6wyi7GeqaIH8DtHy18bBgHmK4H8c18fXKnY1Dr4O0fcTX9VFjVs1ksB_rxz3tYLYzBZ_nFpIYY4Qhj6iCZIg_EPb0iq2Y_B_OqkpXeSffbFDbFzHth9bVCzKzYCIcMpCpOmrENJUhccKtJZ7HLa63-5Q/w400-h225/rumah%20ngebangunindonesia_5.jpeg" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer gallery-img" alt="Project 10"></div>
+                <div class="h-48 md:h-64 overflow-hidden rounded-lg"><img src="https://dominator.ocicio.com/uploads/images/2021/07/34913/rumah-mewah-bandung-timur-lokasi-strategis-ha-lama-sangat-luas-shm--0CEJNC.jpg" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer gallery-img" alt="Project 11"></div>
+                <div class="h-48 md:h-64 overflow-hidden rounded-lg"><img src="https://webfile.rumaindo.com/img/iklan/2024/07/properti-35739.png?token=20240710083935" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer gallery-img" alt="Project 12"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl font-heading font-bold text-center text-navy-900 mb-10">Pertanyaan Umum (Q&A)</h2>
+            <div class="space-y-4">
+                <!-- Q1 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left font-bold text-navy-900 flex justify-between items-center focus:outline-none hover:bg-gray-100 transition" onclick="toggleAccordion(this)">
+                        <span>Apakah bisa survey lokasi? Gratis?</span>
+                        <i class="fas fa-chevron-down text-brand-red transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden bg-gray-50 border-t border-gray-100">
+                        <div class="px-6 py-4 text-gray-600">
+                            Ya, kami menyediakan layanan survey lokasi. Untuk area Kota Makassar, survey tidak dipungut biaya (Gratis) untuk konsultasi awal dan pengukuran.
+                        </div>
+                    </div>
+                </div>
+                <!-- Q2 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left font-bold text-navy-900 flex justify-between items-center focus:outline-none hover:bg-gray-100 transition" onclick="toggleAccordion(this)">
+                        <span>Apakah menerima desain custom?</span>
+                        <i class="fas fa-chevron-down text-brand-red transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden bg-gray-50 border-t border-gray-100">
+                        <div class="px-6 py-4 text-gray-600">
+                            Sangat bisa. Kami memiliki tim arsitek yang siap membantu Anda mewujudkan desain rumah impian, baik itu model minimalis, klasik, industrial, atau tropis sesuai selera Anda.
+                        </div>
+                    </div>
+                </div>
+                <!-- Q3 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left font-bold text-navy-900 flex justify-between items-center focus:outline-none hover:bg-gray-100 transition" onclick="toggleAccordion(this)">
+                        <span>Area layanan mencakup mana saja?</span>
+                        <i class="fas fa-chevron-down text-brand-red transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden bg-gray-50 border-t border-gray-100">
+                        <div class="px-6 py-4 text-gray-600">
+                            Fokus utama kami adalah Kota Makassar, namun kami juga melayani area sekitar seperti Gowa, Maros, dan Takalar untuk proyek tertentu.
+                        </div>
+                    </div>
+                </div>
+                <!-- Q4 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left font-bold text-navy-900 flex justify-between items-center focus:outline-none hover:bg-gray-100 transition" onclick="toggleAccordion(this)">
+                        <span>Apakah ada garansi pekerjaan?</span>
+                        <i class="fas fa-chevron-down text-brand-red transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden bg-gray-50 border-t border-gray-100">
+                        <div class="px-6 py-4 text-gray-600">
+                            Tentu. Kami memberikan masa retensi (garansi pemeliharaan) setelah serah terima kunci. Lama garansi tergantung kesepakatan kontrak, biasanya 3-6 bulan untuk perbaikan minor.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog / Articles (Accordion Style) -->
+    <section id="blog" class="py-20 bg-white scroll-mt-32">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl font-heading font-bold text-navy-900 mb-10 text-center">Tips & Inspirasi</h2>
+            <div class="space-y-4">
+                <!-- Tip 1 -->
+                <div class="bg-white rounded-lg shadow border border-gray-100 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left font-bold text-navy-900 flex justify-between items-center focus:outline-none hover:bg-gray-50 transition" onclick="toggleAccordion(this)">
+                        <span class="flex items-center gap-3"><i class="fas fa-coins text-brand-red"></i> Tips Renovasi Rumah Hemat & Berkualitas</span>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden bg-gray-50 border-t border-gray-100">
+                        <div class="p-6">
+                            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80" alt="Tips Hemat" class="w-full h-48 object-cover rounded-lg mb-4">
+                            <p class="text-gray-600 leading-relaxed text-sm">
+                                Untuk menekan budget tanpa mengurangi kualitas, utamakan struktur bangunan yang krusial terlebih dahulu. Gunakan material alternatif seperti bata ringan atau baja ringan yang lebih efisien secara waktu dan biaya. Hindari perubahan desain di tengah jalan (Change Order) karena hal ini seringkali menjadi penyebab utama pembengkakan biaya. Selalu buat RAB (Rencana Anggaran Biaya) yang detail sebelum memulai.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tip 2 -->
+                <div class="bg-white rounded-lg shadow border border-gray-100 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left font-bold text-navy-900 flex justify-between items-center focus:outline-none hover:bg-gray-50 transition" onclick="toggleAccordion(this)">
+                        <span class="flex items-center gap-3"><i class="fas fa-home text-brand-red"></i> Inspirasi Desain Rumah Modern di Makassar</span>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden bg-gray-50 border-t border-gray-100">
+                        <div class="p-6">
+                            <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?w=800&q=80" alt="Desain Modern" class="w-full h-48 object-cover rounded-lg mb-4">
+                            <p class="text-gray-600 leading-relaxed text-sm">
+                                Tren desain 2024 untuk iklim tropis seperti Makassar mengedepankan sirkulasi udara (cross-ventilation) dan pencahayaan alami yang maksimal. Konsep "Open Space" yang menyatukan ruang keluarga dan ruang makan membuat rumah terasa lebih luas. Penggunaan elemen roster dan secondary skin pada fasad juga sangat populer untuk meredam panas matahari sore tanpa menghalangi angin.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tip 3 -->
+                <div class="bg-white rounded-lg shadow border border-gray-100 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left font-bold text-navy-900 flex justify-between items-center focus:outline-none hover:bg-gray-50 transition" onclick="toggleAccordion(this)">
+                        <span class="flex items-center gap-3"><i class="fas fa-exclamation-triangle text-brand-red"></i> Kesalahan Umum Saat Renovasi Rumah</span>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden bg-gray-50 border-t border-gray-100">
+                        <div class="p-6">
+                            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80" alt="Kesalahan Renovasi" class="w-full h-48 object-cover rounded-lg mb-4">
+                            <p class="text-gray-600 leading-relaxed text-sm">
+                                Kesalahan paling fatal adalah memulai renovasi tanpa perencanaan matang atau gambar kerja. Seringkali pemilik rumah tergiur harga borongan murah tanpa spesifikasi material yang jelas, yang akhirnya berujung pada kualitas bangunan yang buruk atau pekerjaan bongkar pasang. Pastikan juga Anda sudah mengurus IMB renovasi jika ada perubahan struktur atau fasad yang signifikan.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tip 4 -->
+                <div class="bg-white rounded-lg shadow border border-gray-100 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left font-bold text-navy-900 flex justify-between items-center focus:outline-none hover:bg-gray-50 transition" onclick="toggleAccordion(this)">
+                        <span class="flex items-center gap-3"><i class="fas fa-hard-hat text-brand-red"></i> Tips Memilih Jasa Konstruksi Profesional</span>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden bg-gray-50 border-t border-gray-100">
+                        <div class="p-6">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80" alt="Jasa Profesional" class="w-full h-48 object-cover rounded-lg mb-4">
+                            <p class="text-gray-600 leading-relaxed text-sm">
+                                Jangan hanya terpaku pada harga terendah. Pastikan kontraktor memiliki alamat kantor yang jelas, bisa dikunjungi, dan memiliki portofolio proyek real yang bisa Anda cek. Kontraktor profesional akan selalu memberikan transparansi dalam RAB, menawarkan kontrak kerja tertulis yang melindungi kedua belah pihak, dan memberikan garansi pemeliharaan setelah proyek selesai.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Maps -->
+    <section id="contact" class="bg-navy-900 text-white py-20 scroll-mt-32">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row gap-12">
+                <!-- Info -->
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-heading font-bold mb-6">Hubungi Kami</h2>
+                    <p class="text-gray-300 mb-8">Siap mewujudkan hunian impian Anda? Jangan ragu untuk menghubungi kami untuk konsultasi gratis atau survey lokasi.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-brand-red rounded flex items-center justify-center shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Alamat Kantor</h4>
+                                <p class="text-gray-300 text-sm">Jl. HJ. Saripa Raya Jl. Saripah III No.10 Blok B2, Karampuang, Kec. Panakkukang, Kota Makassar, Sulawesi Selatan 90231</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-brand-red rounded flex items-center justify-center shrink-0">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Telepon / WhatsApp</h4>
+                                <p class="text-gray-300 text-sm">0817-1731-2432</p>
+                                <a href="https://wa.me/6281717312432" target="_blank" class="text-brand-red hover:text-white text-sm transition">Klik untuk Chat WA</a>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 mt-6">
+                            <a href="https://www.instagram.com/mitra_renov_makassar/" target="_blank" class="w-12 h-12 bg-white text-navy-900 rounded-full flex items-center justify-center text-xl hover:bg-brand-red hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/trifateknindo" target="_blank" class="w-12 h-12 bg-white text-navy-900 rounded-full flex items-center justify-center text-xl hover:bg-brand-red hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div class="md:w-1/2 h-80 bg-gray-200 rounded-lg overflow-hidden shadow-xl">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.744747385419!2d119.4447333!3d-5.1444144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbf1d8f8d67a13d%3A0x6b8c8d8d8d8d8d8d!2sJl.%20Hj.%20Saripa%20Raya%2C%20Panakkukang%2C%20Makassar!5e0!3m2!1sid!2sid!4v1625637283921!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 border-t border-gray-800 text-gray-400 py-10 text-sm">
+        <div class="container mx-auto px-4 flex flex-col items-center">
+            <!-- Menu Links (Integrated & Button Style) -->
+            <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-8 font-heading">
+                <a href="#home" class="footer-btn bg-navy-800 hover:bg-brand-red text-white px-6 py-2 rounded-full transition duration-300 shadow hover:shadow-lg transform hover:-translate-y-1 text-sm font-semibold border border-gray-700 hover:border-brand-red">Beranda</a>
+                <a href="#about" class="footer-btn bg-navy-800 hover:bg-brand-red text-white px-6 py-2 rounded-full transition duration-300 shadow hover:shadow-lg transform hover:-translate-y-1 text-sm font-semibold border border-gray-700 hover:border-brand-red">Tentang Kami</a>
+                <a href="#services" class="footer-btn bg-navy-800 hover:bg-brand-red text-white px-6 py-2 rounded-full transition duration-300 shadow hover:shadow-lg transform hover:-translate-y-1 text-sm font-semibold border border-gray-700 hover:border-brand-red">Layanan</a>
+                <a href="#gallery" class="footer-btn bg-navy-800 hover:bg-brand-red text-white px-6 py-2 rounded-full transition duration-300 shadow hover:shadow-lg transform hover:-translate-y-1 text-sm font-semibold border border-gray-700 hover:border-brand-red">Galeri</a>
+                <a href="#blog" class="footer-btn bg-navy-800 hover:bg-brand-red text-white px-6 py-2 rounded-full transition duration-300 shadow hover:shadow-lg transform hover:-translate-y-1 text-sm font-semibold border border-gray-700 hover:border-brand-red">Artikel</a>
+                <a href="#contact" class="footer-btn bg-navy-800 hover:bg-brand-red text-white px-6 py-2 rounded-full transition duration-300 shadow hover:shadow-lg transform hover:-translate-y-1 text-sm font-semibold border border-gray-700 hover:border-brand-red">Hubungi Kami</a>
+            </div>
+
+            <p>&copy; 2024 Mitra Renov Makassar. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-24 right-6 z-50 bg-navy-800 text-white w-10 h-10 rounded-full shadow-lg items-center justify-center hidden hover:bg-brand-red transition duration-300" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6281717312432?text=Halo%20Mitra%20Renov,%20saya%20mau%20tanya%20jasa%20konstruksi." target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition transform hover:scale-110 flex items-center gap-2 group">
+        <i class="fab fa-whatsapp text-3xl"></i>
+        <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 whitespace-nowrap font-bold">Hubungi Kami</span>
+    </a>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Full Image">
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Sticky Navbar Effect & Back to Top Visibility
+        const navbar = document.getElementById('navbar');
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('py-3');
+                navbar.classList.add('py-2');
+                backToTop.classList.remove('hidden');
+                backToTop.classList.add('flex');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.remove('py-2');
+                navbar.classList.add('py-3');
+                backToTop.classList.add('hidden');
+                backToTop.classList.remove('flex');
+            }
+        });
+
+        // Animated Counters
+        const counters = document.querySelectorAll('.counter');
+        let hasAnimated = false;
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const increment = target / 100;
+                
+                const updateCounter = () => {
+                    const c = +counter.innerText.replace('+', '');
+                    if(c < target) {
+                        counter.innerText = Math.ceil(c + increment) + '+';
+                        setTimeout(updateCounter, 20);
+                    } else {
+                        counter.innerText = target + '+';
+                    }
+                };
+                updateCounter();
+            });
+        };
+
+        const counterSection = document.getElementById('counter-section');
+        const observer = new IntersectionObserver((entries) => {
+            if(entries[0].isIntersecting && !hasAnimated) {
+                animateCounters();
+                hasAnimated = true;
+            }
+        }, { threshold: 0.5 });
+
+        observer.observe(counterSection);
+
+        // Accordion Toggle
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.fa-chevron-down'); 
+            content.classList.toggle('hidden');
+            if(icon) {
+                icon.classList.toggle('rotate-180');
+            }
+        }
+
+        // Active Link Highlighter (ScrollSpy)
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const footerBtns = document.querySelectorAll('.footer-btn');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+
+            footerBtns.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('href').includes(current)) {
+                    btn.classList.add('active');
+                }
+            });
+        });
+
+        // Lightbox Functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const galleryImages = document.querySelectorAll('.gallery-img');
+
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.style.display = 'flex';
+                setTimeout(() => lightbox.classList.add('show'), 10); // Fade in
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('show');
+            setTimeout(() => lightbox.style.display = 'none', 300); // Wait for fade out
+        }
+    </script>
+</body>
+</html>
